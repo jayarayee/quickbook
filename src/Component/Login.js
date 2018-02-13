@@ -1,23 +1,25 @@
 import React, { Component } from 'react'
 import '../css/Login.css'
+import logo from "../res/logo.png";
+import form from 'react-bootstrap';
 
 class Login extends Component{
     render(){
         return(
             <div className="fill-page dark-blue-background">
                 <div className="login-container">
+                    <div className="login-header"><img src={logo} alt="bluePrint" height="30"/></div>
                     <form id="form" className="login-form">
-                        <hr/>
+                
                         <div className="form-group">
-                            <label className="login-label"></label>
-                            <input id="username" type="text" className="login-text form-control" 
-                                onChange={event => this.setState({ username: event.target.value, usernameError: "" })}/>
+                            <label className="login-label" htmlFor="username"> Username: </label>
+                            <input id="username" type="text" className="login-text form-control"/>
                         </div>
                         <div className="form-group">
-                            <label className="login-label" ></label>
-                            <input id="password" type="password" className="login-text form-control" 
-                                onChange={event => this.setState({ password: event.target.value, passwordError: "" })}/>
+                            <label className="login-label" htmlFor="username"> Password: </label>
+                            <input id="username" type="text" className="login-text form-control" />
                         </div>
+                        
                         <hr/>
                         <button type="submit" className="login-btn btn">
                             LOGIN
@@ -25,7 +27,7 @@ class Login extends Component{
                     </form>
                 </div>
             </div>
-        )
+        );
     }
 }
 export default Login
